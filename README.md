@@ -25,18 +25,18 @@ This service uses Spring Security (as indicated by the security debug logging co
 
 ## POST - /register/user
 
-Endpoint is available for all the users we can register new users
+The endpoint is available for all the users we can register new users
 
 request body
 
 {
-    "username":"Angel",
-    "password":"vikas"
+    "username": "Angel",
+    "password" :"vikas"
 }
 
 Response 
 
-User has ben added successfully
+The user has been added successfully
 
 
 ## POST - /login/user
@@ -44,42 +44,43 @@ User has ben added successfully
 request body
 
 {
-    "username":"Angel",
-    "password":"vikas"
+    "username": "Angel",
+    "password": "vikas"
 }
 
 Response 
 
-Response will be JWT token
+The response will be JWT token
 
 ## GET - fetch/{username} ( accesible for ADMIN user)
 
 
-request body: with JWT token and username
+request body:  JWT token in the header and username
 
 Response 
 
 {
-    "username":"Angel",
-    "password":"vikas"
+    "username": "Angel",
+    "password" :"vikas"
 }
+
 ## PUT - /update/user
 
-User password can be updated
+The user password can be updated
 
 
 request body
 
 {
-    "username":"Angel",
-    "password":"vikas"
+    "username": "Angel",
+    "password": "vikas"
 }
 
 Response 
-The 
-password has been updated
 
-## PUT - /update/userRole ( accesible for ADMIN user)
+  The password has been updated
+
+## PUT - /update/userRole ( Accesible for ADMIN user)
 
 request body
 
@@ -96,15 +97,16 @@ Roles have been updated
 request body
 
 {
-    "username":"Angel",
+    "username":"Angel"
 }
+
 Response
 
 User have been removed
 
 ## GET /update/{action}/{username}  ( accesible for ADMIN user)
 
-Response User events such as update, register, login and 
+returns User events such as update, register, login and 
 
 response :
 
