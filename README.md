@@ -5,7 +5,6 @@
 This service handles user management operations with Kafka integration for event messaging.
 
 
-## Server Configuration
 - **Application Name**: UserManagement
 
 ## Authentication
@@ -24,9 +23,9 @@ This service uses Spring Security (as indicated by the security debug logging co
 
 ### [Endpoint Name]
 
---/register/user
+## POST - /register/user
 
-Endpoint is available for all the users we can new users
+Endpoint is available for all the users we can register new users
 
 request body
 
@@ -37,15 +36,86 @@ request body
 
 Response 
 
-
-/login/user
-
-
-/fetch/{username}
-
-/update/user
-
-/update/userRole
+User has ben added successfully
 
 
-  /update/{action}/{username}
+## POST - /login/user
+
+request body
+
+{
+    "username":"Angel",
+    "password":"vikas"
+}
+
+Response 
+
+Response will be JWT token
+
+## GET - fetch/{username} ( accesible for ADMIN user)
+
+
+request body: with JWT token and username
+
+Response 
+
+{
+    "username":"Angel",
+    "password":"vikas"
+}
+## PUT - /update/user
+
+User password can be updated
+
+
+request body
+
+{
+    "username":"Angel",
+    "password":"vikas"
+}
+
+Response 
+The 
+password has been updated
+
+## PUT - /update/userRole ( accesible for ADMIN user)
+
+request body
+
+{
+    "username":"Angel",
+    "roles":["ADMIN"]
+}
+Response
+
+Roles have been updated
+
+## Delete - /remove/user 
+
+request body
+
+{
+    "username":"Angel",
+}
+Response
+
+User have been removed
+
+## GET /update/{action}/{username}  ( accesible for ADMIN user)
+
+Response User events such as update, register, login and 
+
+response :
+
+[
+{
+"username":"ram",
+"action":"update",
+"createdAt":"2024-04-23 21:21:123"
+
+}
+]
+
+
+
